@@ -1,0 +1,44 @@
+body{
+    --primery-color:rgb(17, 255, 0);
+    --secondry-color:orange;
+    background-color: black;
+}
+:root{
+    --background-color: white;
+    --text-color:black;
+    
+}
+.container{
+    position: relative;
+    height: 100vh;
+    background-color: var(--background-color);
+    color: var(--text-color);
+}
+
+.caption{
+    position:absolute;
+    top: 200px;
+}
+
+/* sticky */
+
+h2{
+    position: sticky;
+    top:0;
+}
+.div{
+    height: 100vh;
+    background-color: aqua;
+}
+.div1{
+    height: 100vh;
+    background-color: var(--secondry-color)
+}
+
+@media(prefers-color-scheme : dark){
+    :root{
+        --background-color: black;
+        --text-color:white;
+
+    }
+}

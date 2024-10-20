@@ -1,0 +1,32 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+h1{
+    color: blue;
+}
+h1:hover{
+    color: rgb(255, 0, 187);
+}
+
+.option:hover + ul{
+    display: block;
+    
+}
+ul{
+    display: none;
+    
+}
+
+a:visited{
+    color: aqua;
+}
+
+ol li:first-child{
+    color: green;
+}
+ol li:last-child{
+    color: pink;
+}

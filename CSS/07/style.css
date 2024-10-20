@@ -1,0 +1,9 @@
+.parent  > p{
+color: blue;
+}
+
+.parent + .another-parent {
+    height: 100vh;
+    border: 1px solid black;
+    background-color: aquamarine;
+}

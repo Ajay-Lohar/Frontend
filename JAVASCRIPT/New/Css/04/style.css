@@ -1,0 +1,29 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.parent{
+    height: 100vh;
+    background-color: aqua;
+    width: 100%;
+    color: black;
+    font-size: 40px;
+
+}
+.child-1{
+    background-color: orange;
+    height: 33.33%;
+}
+.child-2{
+    background-color: white;
+    height: 33.33%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.child-3{
+    background-color: green;
+    height: 33.33%;
+}
