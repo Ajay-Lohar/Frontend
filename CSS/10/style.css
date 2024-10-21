@@ -1,0 +1,89 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.content{
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+} 
+.box{
+    background-color: blue;
+    height: 200px;
+    width: 200px;
+    /* rotate: 45deg; rotate the box */
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+     scale: 1;  /*original size of box  */
+    /*scale: 2;   size multiply by 2 */
+
+    transition: all 1.0s ;
+}
+
+.box:hover{
+    /* scale: 1.5; */
+    /* translate: 30px 20px;  x and y  axis */  
+    /* translate: 20px; */
+    /* transform: rotate(40deg)  scale(2) translate(200px); */
+     rotate: 45deg;
+    background-color: aqua;
+    border-radius: 50%;
+    }
+
+    .box-2{
+        background-color: blueviolet;
+        height: 150px;
+        width: 150px;
+
+    }
+    .box-2:hover{
+        animation: rotate-animation  10s linear infinite ;
+
+    }
+    @keyframes rotate-animation {
+        to{
+            rotate: 0deg;
+        }
+        from{
+            rotate: 360deg;
+        }
+
+        
+    }
+    .parent{
+        background-color: black;
+    }
+
+    .text{
+        display:flex;
+        justify-content: center;
+        align-items: center;
+        
+        color: aliceblue;
+        gap: 50px;
+        overflow:hidden ;
+        animation: marque 10s linear infinite;
+        height: 100px;
+
+    }
+    .text p{
+        flex-shrink: 0;
+
+    }
+    @keyframes marque {
+        from{
+            translate: 100%;
+
+        }
+        to{
+            translate: 0%;
+        }
+    
+    }
+
+    
