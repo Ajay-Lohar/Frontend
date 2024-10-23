@@ -1,0 +1,140 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+@font-face {
+    font-family: myFirstFont;
+    src: url(Inter.ttc);
+  }
+body{
+    font-family:myFirstFont;
+    color: #424242;
+}
+
+ 
+header{
+    display: flex;
+    justify-content: space-between;
+    padding: 20px;
+    box-shadow: 0px 15px 10px -15px #adacac;  
+    position: fixed;
+    width: 100%;
+    background-color: white;
+}
+.logo{
+    justify-content: center;
+    align-items: center;
+    display: flex;
+    padding-left: 80px;
+}
+.logo > img{
+    height: 20px;
+
+
+    }
+.ul-list{
+ display: flex;
+ justify-content: center;
+ align-items: center;
+ margin-right: 80px;
+
+}
+.ul-list>li{
+    margin: 0px;
+    padding-right: 40px;
+    list-style: none;
+    color: #444;
+    
+
+}
+.container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 96vh;
+    padding: 40px;
+    flex-direction: column ;
+}
+.container> img{
+    padding: 40px;
+}
+.h1{
+    font-size: 50px;
+    padding: 30px;
+}
+.container>p{
+    font-size: 24px;
+}
+.button{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.btn{
+    border: none;
+    background-color:#387ed1 ;
+    color:white;
+    margin: 24px;
+    font-size: 24px;
+    padding: 10px 20px;
+    border-radius: 5px;
+    
+}
+.main{
+    display: flex;
+    padding: 50px;
+}
+.content{
+    width: 45%;
+    padding: 50px;
+    font-size: 20px;
+}
+.content >h1{
+    padding: 10px;
+  padding-bottom: 30px;
+}
+.main >img{
+    width :55%;
+    padding: 40px;
+}
+.paragraph{
+    padding: 10px;
+}
+.paragraph >h3{
+    padding-bottom: 10px;
+}
+.img> .link{
+    display: flex;
+    justify-content: center;
+    color: #387ed1;
+    
+}
+.img> .link >p{
+    padding: 20px;
+    
+}
+.advertize{
+display: flex;
+justify-content: center;
+align-items: center;
+padding: 40px;
+padding-bottom: 80px;
+}
+
+.accout{
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    padding: 40px;
+    
+   
+}
+.accout >h1{
+    padding: 40px
+}
+.accout >p{
+    padding: 20px;
+}
