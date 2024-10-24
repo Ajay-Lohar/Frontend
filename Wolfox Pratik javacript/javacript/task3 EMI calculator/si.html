@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>simple interest</title>
+    <link
+    href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css"
+    rel="stylesheet"
+    integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC"
+    crossorigin="anonymous"
+  />
+  <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+  <style>
+    .main{
+        border: 1px solid white;
+        border-radius: 5px;
+        height: 550px;
+        border-radius: 25px;
+    }
+    label,h1,h4{
+        font-weight: bolder;
+        color: white;
+    }
+    input{
+    
+        background-color:  rgb(147, 220, 241);
+        text-align: right;
+    }
+    .button{
+        text-align: center;
+    }
+    h1{
+        padding-top: 15px;
+        padding-bottom: 15px;
+        background-color: black;
+        border-radius: 25px;
+    }
+   
+  </style>
+
+</head>
+<body >
+    <div class="container pt-5 ">
+        <div class="row">
+            <center>
+       <div class=" main col-md-5 bg-secondary ">
+            <h1>EMI calculator</h1>
+
+            <label for="" >Principal</label><br>
+            <input type="text" id="Principal" placeholder="amount" ><br><br>
+
+            <label for="">rate</label><br>
+            <input type="text" id="rate" placeholder="rate"><br><br>
+            
+            <label for="">years</label><br>
+            <input type="text" id="years" placeholder="years"><br><br>
+        
+            <div class="button">
+            <input type="button" class="btn btn-primary" value="calculate" onclick="calculate()">
+            <input type="button" class="btn btn-primary" value="clear" onclick="clr()"><br><br>
+            </div>
+
+            <input type="hidden" id="siinput">
+
+            <h4 id="si"></h4>
+            <h4 id="ta"></h4>
+            <h4 id="months"></h4>
+            <h4 id="emi"></h4>
+
+        </div></center>
+
+        <div id="piechart" style="width: 1000px; height: 500px;"></div>
+
+    </div>
+    </div>
+
+
+
+
+    <script>
+        function calculate() {
+
+            var Principal = document.getElementById('Principal').value;
+            console.log(Principal)
+
+            var rate = document.getElementById('rate').value;
+            console.log(rate)
+
+            var years = document.getElementById('years').value;
+            console.log(years)
+
+            // claculate simple interest
+            var si = (Principal * rate * years)/100;
+            
+            document.getElementById("si").innerHTML ="simple interest = "+si;
+            document.getElementById("siinput").value=si;
+
+            // calculate total amount
+            var total_amount = parseInt(si) + parseInt(Principal);   
+            document.getElementById("ta").innerHTML ="total amount = "+total_amount;
+
+            // calculate total installment(inst)
+            var inst = years * 12;
+            document.getElementById("months").innerHTML ="months = "+inst;
+
+            // calculate monthly EMI
+            var EMI = total_amount/inst;
+            document.getElementById("emi").innerHTML ="EMI = "+EMI;
+
+            callchat();
+        }
+
+        function clr(){
+            // alert('clear');
+            var Principal = document.getElementById('Principal').value=" ";
+            var rate = document.getElementById('rate').value=" ";
+            var years = document.getElementById('years').value=" ";
+
+            document.getElementById("si").innerHTML =" ";
+            document.getElementById("ta").innerHTML =" ";
+            document.getElementById("months").innerHTML =" ";
+            document.getElementById("emi").innerHTML =" ";
+        }
+        
+
+        function callchat(){
+            google.charts.load('current', {'packages':['corechart']});
+            google.charts.setOnLoadCallback(drawChart);
+        }
+    
+
+    function drawChart() {
+
+        var Principal = parseInt(document.getElementById('Principal').value);
+        var si= parseInt(document.getElementById('siinput').value);
+        
+      var data = google.visualization.arrayToDataTable([
+        ['amounts', 'persent'],
+        ['amount',     Principal],
+        ['simple interest',     si],
+      ]);
+
+      var options = {
+        title: 'amount and simple interst'
+      };
+
+      var chart = new google.visualization.PieChart(document.getElementById('piechart'));
+
+      chart.draw(data, options);
+    }
+  </script>
+
+<script
+src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+crossorigin="anonymous"
+></script>
+</body>
+</html>

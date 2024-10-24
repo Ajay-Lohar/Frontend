@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>demo</title>
+    <link
+    href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css"
+    rel="stylesheet"
+    integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC"
+    crossorigin="anonymous"
+    />
+    <style>
+        table{
+            border: 1px solid;
+        }
+        th,td{
+            border: 1px solid;
+            height: 20px;
+        }
+    </style>
+</head>
+<body>
+    <div id="di">
+        <h1></h1>
+        <input type="text" name="ip" id="ip">
+        <button onclick="clk()">append</button>
+    </div>
+    
+    <table class="col-10 p-4 text-center " id="td" >
+        <tr >
+            <th >Product</th>
+            <th >Price</th>
+            <th >GST</th>
+            <th >CGST</th>
+            <th >SGST</th>
+            <th >IGST</th>
+            <th >Product Price</th>
+           
+        </tr>
+        <!-- <tr >
+            <td ></td>
+            <td ></td>
+            <td ></td>
+            <td ></td>
+            <td ></td>
+            <td ></td>
+            <td ></td>
+        </tr> -->
+        
+    </table>
+    <button onclick="add()">add row</button>
+
+
+
+
+
+    <script>
+        function clk(){
+            // alert('hii');
+            var theDiv = document.createElement("h4");
+            var nw = document.getElementById('ip').value;
+            var content = document.createTextNode(nw);
+            theDiv.append(content);
+            document.getElementById('di').append(theDiv);
+        }   
+        function add(){
+            //  alert("add");
+            var row = document.createElement("tr");
+
+            var Product= document.createElement("td");
+            var Price= document.createElement("td");
+            var GST= document.createElement("td");
+            var CGST= document.createElement("td");
+            var SGST= document.createElement("td");
+            var IGST= document.createElement("td");
+            var Prod_Price = document.createElement("td");
+
+            row.appendChild(Product);
+            row.appendChild(Price);
+            row.appendChild(GST);
+            row.appendChild(CGST);
+            row.appendChild(SGST);
+            row.appendChild(IGST);
+            row.appendChild(Prod_Price);
+            document.getElementById('td').append(row);
+              
+        }
+    </script>
+
+     <script
+    src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+    crossorigin="anonymous"
+    ></script>
+</body>
+</html>

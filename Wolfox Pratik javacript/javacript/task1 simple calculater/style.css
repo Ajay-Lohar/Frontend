@@ -1,0 +1,41 @@
+
+.container{
+    margin-top: 20px;
+    text-align: center;
+    width: 250px;
+    
+}
+.main{
+    border: 5px solid black;
+    border-radius: 10px;
+    background-color: rgb(59, 57, 57);
+    
+}
+
+.btn1{
+    border: 2px solid black;
+    background-color: rgb(184, 179, 179);
+    margin-top: 5px;
+    margin-bottom: 5px;
+    width: 40px;
+    border-radius: 30%;
+}
+.btn2{
+    background-color: rgb(255, 115, 0);
+}
+.res{
+    border: 2px solid black;
+    background-color: rgb(184, 179, 179);
+    margin-top: 5px;
+    margin-bottom: 6px;
+    border-radius:5px ;
+    font-size: 15px;
+}
+h1{
+    color: rgb(255, 115, 0);
+}
+.disp{
+    border: 2px solid black;
+    border-radius:5px ;
+    text-align: right;
+}

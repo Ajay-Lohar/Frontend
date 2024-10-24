@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>calculater</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">
+
+    <link rel="stylesheet" href="style.css">
+  </head>
+  <body>
+    <!-- main body -->
+    <div class="container  " >
+    <div class="main col-12 col-md-12">
+        <h1>calculator</h1>
+
+    <input type="text" class="disp" name="" id="disp" /><br />
+    <input type="button" class="btn1" value="ac" onclick="allclear()" />
+    <input type="button" class="btn1" value="c" onclick="clr()" />
+    <input type="button" class="btn1" value="%" onclick="persent()" />
+    <input type="button" class="btn1 btn2" value="/" onclick="simboldiv()" /><br>
+
+      <input type="button" class="btn1" value="7" onclick="digitseven()" />
+      <input type="button" class="btn1" value="8" onclick="digiteight()" />
+      <input type="button" class="btn1" value="9" onclick="digitnine()" />
+      <input type="button" class="btn1 btn2" value="*" onclick="simbolMul()" /><br>
+      
+
+      <input type="button" class="btn1" value="4" onclick="digitfour()" />
+      <input type="button" class="btn1" value="5" onclick="digitfive()" />
+      <input type="button" class="btn1" value="6" onclick="digitsix()" />
+      <input type="button" class="btn1 btn2" value="-" onclick="simbolMinus()" /><br>
+
+      <input type="button" class="btn1" value="1" onclick="digitone()" />
+      <input type="button" class="btn1" value="2" onclick="digittwo()" />
+      <input type="button" class="btn1" value="3" onclick="digitthree()" />
+      <input type="button" class="btn1 btn2" value="+" onclick="simbolPlus()" /><br>
+      
+      
+      <input type="button" class="btn1" value="00" onclick="digittwozero()" />
+      <input type="button" class="btn1" value="0" onclick="digitzero()" />
+      <input type="button" class="btn1" value="." onclick="point()" />
+      <input type="button" class="btn1" value="=" onclick="result()"/>
+
+    </div>
+    </div>
+    
+
+    <!-- end main body -->
+
+    <!-- javascipt -->
+    <script>
+        function allclear(){
+        
+            var oldval=document.getElementById('disp').value='';
+           
+        }
+
+        function clr(){
+            // alert('hii');
+            var oldval=document.getElementById('disp').value=disp.value.toString().slice(0,-1);
+        }
+
+        function digitone(){
+            // alert(' One');
+            var oldval=document.getElementById('disp').value;
+            var digit='1';
+            var newval= oldval + digit ;
+            document.getElementById('disp').value = newval;
+        }
+
+        function digittwo(){
+            var oldval=document.getElementById('disp').value;
+            var digit='2';
+            var newval= oldval + digit ;
+            document.getElementById('disp').value = newval;
+        }
+
+        function digitthree(){
+            var oldval=document.getElementById('disp').value;
+            var digit='3';
+            var newval= oldval + digit ;
+            document.getElementById('disp').value = newval;
+        }
+
+        function digitfour(){
+            var oldval=document.getElementById('disp').value;
+            var digit='4';
+            var newval= oldval + digit ;
+            document.getElementById('disp').value = newval;
+        }
+
+        function digitfive(){
+            var oldval=document.getElementById('disp').value;
+            var digit='5';
+            var newval= oldval + digit ;
+            document.getElementById('disp').value = newval;
+        }
+
+        function digitsix(){
+            var oldval=document.getElementById('disp').value;
+            var digit='6';
+            var newval= oldval + digit ;
+            document.getElementById('disp').value = newval;
+        }
+
+        function digitseven(){
+            var oldval=document.getElementById('disp').value;
+            var digit='7';
+            var newval= oldval + digit ;
+            document.getElementById('disp').value = newval;
+        }
+
+        function digiteight(){
+            var oldval=document.getElementById('disp').value;
+            var digit='8';
+            var newval= oldval + digit ;
+            document.getElementById('disp').value = newval;
+        }
+
+        function digitnine(){
+            var oldval=document.getElementById('disp').value;
+            var digit='9';
+            var newval= oldval + digit ;
+            document.getElementById('disp').value = newval;
+        }
+
+        function digittwozero(){
+            var oldval=document.getElementById('disp').value;
+            var digit='00';
+            var newval= oldval + digit ;
+            document.getElementById('disp').value = newval;
+        }
+
+        function digitzero(){
+            var oldval=document.getElementById('disp').value;
+            var digit='0';
+            var newval= oldval + digit ;
+            document.getElementById('disp').value = newval;
+        }
+
+        function point(){
+            var oldval=document.getElementById('disp').value;
+            var digit='.';
+            var newval= oldval + digit ;
+            document.getElementById('disp').value = newval;
+        }
+
+        function simbolPlus(){
+            var oldval=document.getElementById('disp').value;
+            var digit='+';
+            var newval= oldval + digit ;
+            document.getElementById('disp').value = newval;
+        }
+
+        function simbolMinus(){
+            var oldval=document.getElementById('disp').value;
+            var digit='-';
+            var newval= oldval + digit ;
+            document.getElementById('disp').value = newval;
+        }
+
+        function simbolMul(){
+            var oldval=document.getElementById('disp').value;
+            var digit='*';
+            var newval= oldval + digit ;
+            document.getElementById('disp').value = newval;
+        }
+
+        function simboldiv(){
+            var oldval=document.getElementById('disp').value;
+            var digit='/';
+            var newval= oldval + digit ;
+            document.getElementById('disp').value = newval;
+        }
+
+        function result(){
+            // alert('result');
+            var oldval=document.getElementById('disp').value;
+            var newval=eval(oldval) ;
+            document.getElementById('disp').value = newval;
+        }
+        
+        // end javascript
+
+    </script>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm" crossorigin="anonymous"></script>
+  </body>
+</html>

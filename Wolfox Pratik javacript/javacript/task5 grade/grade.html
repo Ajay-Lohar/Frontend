@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Grade</title>
+    <link
+    href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css"
+    rel="stylesheet"
+    integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC"
+    crossorigin="anonymous"
+  />
+  <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+
+  <style>
+    .sem1{
+        border: 1px solid ;
+    }
+    .textb{
+        width: 50%;
+        height: 50%;
+    }
+  </style>
+</head>
+<body>
+    <div class="container col-md-12 mt-5">
+        <div class="row">
+            <div class="col-md-6 sem1">
+                <div class="row m-3">
+                <label for="subject" class="col-md-3">IP</label>
+                <input type="text" name="" id="IP" class="col-md-9 textb"><br><br>
+                </div>
+                
+                <div class="row m-3">
+                <label for="subject"class="col-md-3 ">CAOS</label>
+                <input type="text" name="" id="CAOS" class="col-md-9 textb"><br><br>
+                </div>
+
+                <div class="row m-3">
+                <label for="subject" class="col-md-3">RDBMS</label>
+                <input type="text" name="" id="RDBMS" class="col-md-9 textb"><br><br>
+                </div>
+
+                <div class="row m-3">
+                <label for="subject" class="col-md-3">KM</label>
+                <input type="text" name="" id="KM" class="col-md-9 textb"><br><br>
+                </div>
+
+                <div class="row m-3">
+                <label for="subject" class="col-md-3">PMOB</label>
+                <input type="text" name="" id="PMOB" class="col-md-9 textb"><br><br>
+                </div>
+
+                <input type="button" value="calculate" onclick="cal()">
+            
+
+
+             <h4 id="tm"></h4>
+             <h4 id="per"></h4>
+             <h4 id="grade"></h4>
+
+             <div id="piechart" style="width: 100%; height: 500px;"></div>
+            </div>
+
+            <div class="col-md-6">
+                <center>
+                <label for="subject">WT</label>
+                <input type="text" name="" id="WT"><br><br>
+
+                <label for="subject">SEMP</label>
+                <input type="text" name="" id="SEMP"><br><br>
+
+                <label for="subject">Big Data</label>
+                <input type="text" name="" id="BD"><br><br>
+
+                <label for="subject">DCN</label>
+                <input type="text" name="" id="DCN"><br><br>
+
+                <label for="subject">DS</label>
+                <input type="text" name="" id="DS"><br><br>
+
+                <input type="button" value="calculate2" onclick="cal2()">
+            </center>
+
+
+             <h4 id="tm2"></h4>
+             <h4 id="per2"></h4>
+             <h4 id="grade2"></h4>
+
+             <div id="piechart2" style="width: 100%; height: 500px;"></div>
+            </div>
+
+        </div>
+    </div>
+
+    <script>
+        function cal(){
+            alert('calculate');
+            
+            var sub1 =parseInt( document.getElementById('IP').value);
+            var sub2 =parseInt( document.getElementById('CAOS').value);
+            var sub3 =parseInt( document.getElementById('RDBMS').value);
+            var sub4 =parseInt( document.getElementById('KM').value);
+            var sub5 =parseInt( document.getElementById('PMOB').value);            
+            console.log(sub1);
+            console.log(sub2);
+            console.log(sub3);
+            console.log(sub4);
+            console.log(sub5);
+
+            var Total_marks = sub1+ sub2 + sub3 +sub4 +sub5;
+            console.log(Total_marks);
+            document.getElementById('tm').innerHTML="total marks="+Total_marks;
+
+            var per = Total_marks/5;
+            console.log(per);
+            document.getElementById('per').innerHTML="persentage="+per;
+
+            if(per>=85){
+                document.getElementById('grade').innerHTML="grade : A+";
+            }
+            else if(per>=70){
+                document.getElementById('grade').innerHTML="grade : A";
+            }
+            else if(per>=55){
+                document.getElementById('grade').innerHTML="grade : B+";
+            }
+            else if(per>=40){
+                document.getElementById('grade').innerHTML="grade : B";
+            }
+            else{
+                document.getElementById('grade').innerHTML="grade : F";
+            }
+
+            callchat();
+        }
+
+        function callchat(){
+            google.charts.load('current', {'packages':['corechart']});
+            google.charts.setOnLoadCallback(drawChart);
+        }
+
+      function drawChart() {
+
+        var sub1 =parseInt( document.getElementById('IP').value);
+            var sub2 =parseInt( document.getElementById('CAOS').value);
+            var sub3 =parseInt( document.getElementById('RDBMS').value);
+            var sub4 =parseInt( document.getElementById('KM').value);
+            var sub5 =parseInt( document.getElementById('PMOB').value);   
+
+        var data = google.visualization.arrayToDataTable([
+          ['Subjects', 'Marks'],
+          ['IP',     sub1],
+          ['CAOS',      sub2],
+          ['RDBMS',  sub3],
+          ['KM', sub4],
+          ['PMOB',    sub5]
+        ]);
+
+        var options = {
+          title: 'Sem 1 Marks'
+        };
+
+        var chart = new google.visualization.PieChart(document.getElementById('piechart'));
+
+        chart.draw(data, options);
+      }
+    </script>
+
+    
+<script>
+    function cal2(){
+        alert('calculate 2');
+        
+        var sub6 =parseInt( document.getElementById('WT').value);
+        var sub7 =parseInt( document.getElementById('SEMP').value);
+        var sub8 =parseInt( document.getElementById('BD').value);
+        var sub9 =parseInt( document.getElementById('DCN').value);
+        var sub10=parseInt( document.getElementById('DS').value);            
+        console.log(sub6);
+        console.log(sub7);
+        console.log(sub8);
+        console.log(sub9);
+        console.log(sub10);
+
+        var Total_marks2 = sub6+ sub7 + sub8 +sub9 +sub10;
+        console.log(Total_marks2);
+        document.getElementById('tm2').innerHTML="total marks="+Total_marks2;
+
+        var per2 = Total_marks2/5;
+        console.log(per2);
+        document.getElementById('per2').innerHTML="persentage="+per2;
+
+        if(per2>=85){
+            document.getElementById('grade2').innerHTML="grade : A+";
+        }
+        else if(per2>=70){
+            document.getElementById('grade2').innerHTML="grade : A";
+        }
+        else if(per2>=55){
+            document.getElementById('grade2').innerHTML="grade : B+";
+        }
+        else if(per2>=40){
+            document.getElementById('grade2').innerHTML="grade : B";
+        }
+        else{
+            document.getElementById('grade2').innerHTML="grade : F";
+        }
+
+        callchat2();
+    }
+
+    function callchat2(){
+        // alert('call');
+        google.charts.load('current', {'packages':['corechart']});
+        google.charts.setOnLoadCallback(drawChart2);
+    }
+
+  function drawChart2() {
+    // alert('get in');
+    var sub6 =parseInt( document.getElementById('WT').value);
+        var sub7 =parseInt( document.getElementById('SEMP').value);
+        var sub8 =parseInt( document.getElementById('BD').value);
+        var sub9 =parseInt( document.getElementById('DCN').value);
+        var sub10 =parseInt( document.getElementById('DS').value);   
+
+        // alert('get in3');
+    var data2 = google.visualization.arrayToDataTable([
+      ['Subjects', 'Marks'],
+      ['WT',     sub6],
+      ['SEMP',      sub7],
+      ['BD',  sub8],
+      ['DCN', sub9],
+      ['DS',    sub10]
+    ]);
+
+    var options2 = {
+      title: 'Sem 2 Marks'
+    };
+
+    var chart = new google.visualization.PieChart(document.getElementById('piechart2'));
+
+    chart.draw(data2, options2);
+  }
+</script>
+
+    
+<script
+src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+crossorigin="anonymous"
+></script>
+</body>
+</html>

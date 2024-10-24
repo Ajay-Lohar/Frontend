@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <link rel="stylesheet" type="text/css" href="styles.css">
+</head>
+<body>
+  <div class="accordion">
+    <div class="accordion-item">
+      <div class="accordion-title">Section 1</div>
+      <div class="accordion-content">
+        Content for Section 1 goes here.
+        <button id="nextButton">Next</button>
+      </div>
+    </div>
+    <div class="accordion-item">
+      <div class="accordion-title">Section 2</div>
+      <div class="accordion-content">
+        Content for Section 2 goes here.
+      </div>
+    </div>
+  </div>
+  <script >
+    // Function to create a new accordion item
+function createAccordionItem(title, content) {
+  const accordion = document.querySelector(".accordion");
+
+  const newAccordionItem = document.createElement("div");
+  newAccordionItem.classList.add("accordion-item");
+
+  const newAccordionTitle = document.createElement("div");
+  newAccordionTitle.classList.add("accordion-title");
+  newAccordionTitle.textContent = title;
+
+  const newAccordionContent = document.createElement("div");
+  newAccordionContent.classList.add("accordion-content");
+  newAccordionContent.innerHTML = content;
+
+  newAccordionItem.appendChild(newAccordionTitle);
+  newAccordionItem.appendChild(newAccordionContent);
+  accordion.appendChild(newAccordionItem);
+
+  // Add click event listener to the new title
+  newAccordionTitle.addEventListener("click", () => {
+    newAccordionContent.style.display =
+      newAccordionContent.style.display === "none" ? "block" : "none";
+  });
+}
+
+// Add click event listener to the "Next" button
+const nextButton = document.getElementById("nextButton");
+nextButton.addEventListener("click", () => {
+  createAccordionItem("Section 3", "Content for Section 3 goes here.");
+  nextButton.style.display = "none"; // Hide the "Next" button after opening the second accordion
+});
+
+// Initial "Next" button click handler to create the second accordion
+nextButton.addEventListener("click", () => {
+  createAccordionItem("Section 2", "Content for Section 2 goes here.");
+  nextButton.style.display = "none"; // Hide the "Next" button after opening the second accordion
+});
+  </script>
+</body>
+</html>
