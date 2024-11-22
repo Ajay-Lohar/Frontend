@@ -1,0 +1,6 @@
+java script is sychronous 
+
+line to line execute programmes
+
+1.function settimeout   - at one time 
+2.set interval -in loop 
