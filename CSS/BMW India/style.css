@@ -2,7 +2,66 @@
     padding:0;
     margin: 0;
     box-sizing: border-box;
+    font-family: bmwTypeNextWeb, Arial, Helvetica, sans-serif;
+}
+
+.navbar{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 80px;
+    
+
+    background-color: transparent;
+}
+.nav-1 >ul{
+    display: flex;
+}
+.nav-1 >ul >li{
+    list-style: none;
+    padding-left: 10px;
+}
+.nav-2 >ul{
+    display: flex;
+    
+}
+.nav-2 >ul>li{
+    display: flex;
+    padding-left: 10px;
+}
+.bottom-border{
+    height: 2px ;
+    background-color: #fff;
+    width: 100%;
 }
 .section-1{
     width: 100%;
+    padding-left: 100px;
+    padding-right: 100px;
+    position: absolute;
+    z-index: 1;
+    color: white;
+}
+video{
+    position: relative;
+}
+.img-para{
+   height: 80vh;
+  
+    display: flex ;
+    flex-direction: column;
+    justify-content: end;
+    
+}
+.branding{
+    font-size: 50px;
+
+}
+button{
+    background-color: #1c69d4;
+    border: none;
+    color: #fff;
+    font-size: 15px;
+    padding: 18px 30px 18px 30px;
+    border-radius: 5px;
 }

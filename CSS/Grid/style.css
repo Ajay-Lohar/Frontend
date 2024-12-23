@@ -29,10 +29,14 @@
     display: grid;
     grid-template-columns: 150px 150px 150px;
     grid-template-rows: 150px 150px ;
-    gap: 4px;
+    gap: 5px;
+    justify-content: center;
+    align-content: center;
+    height: 100vh;
+    gap: 5px;
 }
 
-.child-1 ,.child-2 ,.child-3 ,.child-4 {
+.child-1,.child-2 ,.child-3 ,.child-4 {
     background-color: blue;
 }
 .child-1 {
