@@ -1,0 +1,22 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+.container{
+    display: grid;
+    height: 100vh;
+    grid-template-columns: repeat(auto-fit,minmax (300px ,1fr ));
+    grid-template-rows: repeat(2 ,400px);
+    grid-auto-rows: 400px;
+    gap: 10px;
+}
+.child{
+    background-color: #913030; 
+    border-radius: 8px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: aliceblue;
+}
+
