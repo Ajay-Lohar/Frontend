@@ -12,6 +12,7 @@
 :root {
   --primary-brand-color: #000;
   --common-padding: 0 8vw;
+  font-size: 16px;
 }
 a {
   text-decoration: none;
@@ -45,22 +46,18 @@ header {
 }
 .header-search {
   position: relative;
-  gap: 16px;    
 }
 .header-search input {
   border-radius: 28px;
   padding: 4px 8px;
   border: none;
   background-color: #f0f0f0;
-  padding-left: 50px;
-  height: 50px; 
-  width: 450px;
+  padding-left: 36px;
 }
 .search-icon {
   position: absolute;
-  left: 18px;
-  top:  18px;
-  
+  left: 8px;
+  top: 4px;
 }
 .header-options ul {
   display: flex;
@@ -68,15 +65,85 @@ header {
   align-items: center;
   list-style: none;
 }
-.header-last>i {
-    padding: 10px;
-}
 
 main {
   height: 84vh;
   background-color: #f0f0f0;
 }
-.products{
-    display: flex;
-    gap: 30px;
+
+/* new arrivals products */
+
+.products {
+  display: flex;
+  align-items: start;
+  justify-content: space-between;
+  width: 100%;
+  /* gap: 2vw; */
 }
+
+.products div {
+  width: 20%;
+  /* border: 1px solid black; */
+}
+.products div img {
+  width: 100%;
+  height: auto;
+  background-color: #f0f0f0;
+  border-radius: 12px;
+}
+
+.product-price {
+  font-family: "Satoshi", sans-serif;
+  font-weight: bold;
+  font-size: 0.8rem;
+}
+
+.new-arrivals-section {
+  padding: 4vh 8vw;
+}
+
+.new-arrivals-section h2 {
+  font-family: "Candal", sans-serif;
+  text-align: center;
+  padding-bottom: 4vh;
+}
+
+.product-price {
+  font-weight: bold;
+  font-size: 1rem;
+}
+.view-all-wrapper {
+  padding: 4vh;
+  text-align: center;
+}
+.view-all-wrapper a {
+  padding: 0.5rem 1rem;
+  font-family: "Satoshi", sans-serif;
+
+  border-radius: 40px;
+  border: 1px solid rgb(69, 69, 69);
+}
+/* 
+rating 
+*/
+
+.rating {
+  font-size: 1.5rem;
+  /* icon size */
+  display: grid;
+  grid-template: "full" 1fr/1fr;
+  color: #ffc633;
+}
+.rating::before {
+  grid-area: full;
+  width: calc((var(--rating, 0) / 5) * 100%);
+  overflow: hidden;
+  white-space: nowrap;
+  content: "★★★★★";
+}
+.rating::after {
+  grid-area: full;
+  white-space: nowrap;
+  content: "☆☆☆☆☆";
+}
+/* color: #FFC633; */

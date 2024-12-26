@@ -1,0 +1,11 @@
+.product-section {
+    display: flex;
+    justify-content: space-between;
+    /* align-items: center; */
+    gap: 4vw;
+    padding: var(--common-padding);
+  }
+  .product-section > .product-img{
+  background-color: #f0f0f0;
+  border-radius: 20px;
+  }
