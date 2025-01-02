@@ -1,9 +1,6 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
 import './App.css'
-import  {TestComponent}  from './TestComponent';
 import { Demo } from './Demo';
+import  {TestComponent}  from './TestComponent';
 
 function App() {
 const name ="Ajay ";
@@ -11,8 +8,8 @@ const name ="Ajay ";
   // react fragments
     <> 
         <div className='container'>
-         <h1>{name} </h1>
-                  
+         <Demo></Demo>
+         <h2>{name} </h2>
        <TestComponent/>
         </div>
     </>

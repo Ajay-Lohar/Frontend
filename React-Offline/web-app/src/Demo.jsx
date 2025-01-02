@@ -1,3 +1,3 @@
 export function Demo(){
-    return (<H6>javaScript</H6>)
+    return <h1>Hello</h1>;
 }
