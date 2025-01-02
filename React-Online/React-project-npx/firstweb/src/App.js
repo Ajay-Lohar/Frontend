@@ -1,4 +1,4 @@
-import { Card, Col, Container, Row,Button } from 'react-bootstrap';
+import { Card, Container, Row,Button } from 'react-bootstrap';
 import './App.css';
 import Footer from './Footer';
 import Header from './Header';
@@ -106,9 +106,8 @@ function ProductItems({pitems}){
            <Card >
               <Card.Body>
                 <Card.Title>{pitems.title}</Card.Title>
-                <Card.Text>
-                  {pitems.body}
-                </Card.Text>
+                <Card.Text>{pitems.id} </Card.Text>
+                <Card.Text>{pitems.body} </Card.Text>
                 <Button variant="primary">Go somewhere</Button>
                </Card.Body>
             </Card>
