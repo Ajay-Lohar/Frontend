@@ -1,30 +1,19 @@
-import './App.css'
-import { Sport } from './Sport';
-import { Username } from './Username';
+import React from 'react';
+import TaskList from './TaskList.jsx';
 
+const tasks = [
+    { id: 1, task: "Buy groceries", completed: false },
+    { id: 2, task: "Walk the dog", completed: true },
+    { id: 3, task: "Complete homework", completed: false }
+];
 
-function App() {
-const names =["Ajay","Jayraj","Ashish","Pranay","Satish"];
-
-// const newArray = names.map((name)=>{
-//   return <li key={name}>{name}</li>
-
-// });
-  return (
-  // react fragments
-   
-        <div className='container'>
-          <h1>Friend</h1>
-          {/* <ul>
-          {newArray}
-          </ul> */}
-          {/* <Username name="Salman"/> */}
-          <Sport names={names}/>
+const ParentComponent = () => {
+    return (
+        <div>
+            <h1>Task List</h1>
+            <TaskList tasks={tasks} />
         </div>
-    
-  )
-}
+    );
+};
 
-
-
-export default App
+export default ParentComponent;
