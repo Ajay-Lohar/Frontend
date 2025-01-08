@@ -1,11 +1,12 @@
 import React from 'react';
 
-export const TaskList = ({ tasks }) => {
+export const TaskList = ({ task }) => {
     return (
         <div>
-            {tasks.length > 0 ? (
+             
+            {task.length > 0 ? (
                 <ul >
-                    {tasks.map(task => (
+                    {task.map(task => (
                         <li key={task.id}>
                            {task.id}  {task.task} {task.completed ? "(Completed)" : "(Not Completed)"}
                         </li>
@@ -14,6 +15,8 @@ export const TaskList = ({ tasks }) => {
             ) : (
                 <p>No tasks Exist.</p>
             )}
+        
+        
         </div>
     );
 };

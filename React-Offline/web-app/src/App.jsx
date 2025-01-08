@@ -11,7 +11,7 @@ const ParentComponent = () => {
     return (
         <div>
             <h1>Task List</h1>
-            <TaskList tasks={tasks} />
+            <TaskList task={tasks} />
         </div>
     );
 };
