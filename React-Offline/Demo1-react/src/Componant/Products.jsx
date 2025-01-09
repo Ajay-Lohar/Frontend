@@ -1,46 +1,59 @@
 import React, { useState  } from 'react'
 import { useEffect } from "react"
+import "./components.css";
 
 const Products = () => {
-    const [product ,setProduct]=useState([]);
+  const [products, setProducts] = useState([]);
+  const [loading, setLoading] = useState(false);
+  const [error, setError] = useState(false);
 
-async function getProducts(){
+  async function getProducts() {
+    try {
+      setLoading(true);
 
-    try{
-      const res = await fetch('https://dummyjson.com/products');
+      const res = await fetch("https://dummyjson.com/products");
       const data = await res.json();
-      setProduct(data.products);
-    //   console.log(data.products);
-    
-    }catch(error){
-      console.log(error)
-
+      setProducts(data.products); //
+    } catch (error) {
+      setError(true);
+      console.log(error);
+    } finally {
+      setLoading(false);
     }
-    
   }
 
-  useEffect(()=>{
+  useEffect(() => {
     getProducts();
-  } ,[]);
- 
+  }, []);
 
-
+  if (error) {
+    return <h1>Something went wrong please try again...</h1>;
+  }
   return (
-    <>
-    <div>Products</div>
-    {product.map((product)=>{
-        return <div key={product.id}>
-            <h6>{product.id} </h6>
-            <img height={200} src={product.images} alt="" />
-            
-            </div>
-        
-        ;
-    })
+    <div>
+      <h1>Products</h1>
+      {loading ? (
+        <div className="lds-ring" >
+          <div></div>
+          <div></div>
+          <div></div>
+          <div></div>
+        </div>
+      ) : (
+        <div className="container">
+          {products.map((product, index) => {
+            return (
+              <div className="product-card" key={product.id}>
+                <img src={product.thumbnail} alt="" />
+                <p>{product.title}</p>
+                <p>Price {product.price}</p>
+              </div>
+            );
+          })}
+        </div>
+      )}
+    </div>
+  );
+};
 
-    }
-    </>
-  )
-}
-
-export default Products
+export default Products;
