@@ -10,6 +10,8 @@
 .card-item {
     padding-top: 30px;
     gap: 20px;
+    display:  flex;
+    
 }
 
 .card {
