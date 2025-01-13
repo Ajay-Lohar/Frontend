@@ -3,13 +3,13 @@ import './NewArrivals.css'
 
 const NewArrivals = () => {
 
-    const [products,setProducts]= useState([]);
+    const [products,getProducts]= useState([]);
 
     
     async function getProducts() {
       
   
-        const res = await fetch("https://dummyjson.com/products?limit=4");
+        const res = await fetch("https://dummyjson.com/products?limit=8");
         const data = await res.json();
         setProducts(data.products); 
         
@@ -29,7 +29,7 @@ const NewArrivals = () => {
         <div className="card-item flex center wrap">
           {products.map((products)=>{
             return(
-             <>
+             <Link  to= {`ProductPage/${ProductId}`} >
               <div className="card">
                 <div className="item-img">
                   <img src={products.thumbnail} />
@@ -44,7 +44,7 @@ const NewArrivals = () => {
                       </div>
                     </div>
               </div>
-             </>
+             </ Link>
           )})
 
           }
