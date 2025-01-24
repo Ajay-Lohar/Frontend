@@ -1,0 +1,40 @@
+/* position */
+/* position : static | relative | fixed | absolute | sticky */
+/* top: , bottom, left, right */
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+h1 {
+  background-color: aquamarine;
+  border: 1px solid black;
+  position: fixed;
+  width: 100%;
+}
+
+.box-2 {
+  height: 100vh;
+  background-color: red;
+}
+
+.box {
+  height: 100vh;
+  width: 50vw;
+  padding: 10vh;
+  /* ----IMP----- */
+  position: relative;
+}
+
+.box img {
+  width: 50vw;
+}
+h2 {
+  width: 50vw;
+  /* -----IMP------ */
+  position: absolute;
+  top: 45vh;
+  background-color: antiquewhite;
+}
