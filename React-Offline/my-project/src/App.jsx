@@ -11,8 +11,9 @@ function App() {
       Hello world!
     </h1>
     <h2 className="text-2xl font-bold  text-blue-600">
-      Hello world!
+      Hello world! Ajay 
     </h2>
+    
     </>
   )
 }
